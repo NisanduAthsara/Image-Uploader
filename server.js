@@ -9,7 +9,7 @@ const PORT = 8080
 app.use(express.json())
 
 //serving static files
-app.use(express.static(path.join(__dirname,'public')))
+app.use('/css',express.static(path.join(__dirname,'public/css')))
 
 //set view engine
 app.engine('hbs', hbs.express4({
