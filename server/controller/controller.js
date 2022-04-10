@@ -6,13 +6,13 @@ exports.home = async (req,res)=>{
     res.render('main',{images:all_images})
 }
 
-exports.uploads = (req,res,next)=>{
+exports.uploads = (req,res)=>{
     const files = req.files;
 
     if(!files){
         const error = new Error('Please choose files')
         error.httpStatusCode = 400
-        return next(error)
+        return error
     }
 
     let imgArray = files.map((file)=>{
